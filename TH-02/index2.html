@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản Lý Sinh Viên</title>
+    <link rel="stylesheet" href="./css/SM.css" >
+</head>
+
+<body>
+    <div class="management-container">
+        <h2>Quản Lý Sinh Viên</h2>
+        <form id="addStudentForm">
+          
+            <input type="text" id="name" placeholder="Tên" required>
+            <input type="number" id="age" placeholder="Tuổi" required>
+            <input type="text" id="address" placeholder="Địa chỉ" required>
+            <input type="text" id="phone" placeholder="SDT" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="text" id="class" placeholder="Lớp học" required>
+            <button id="submit">Thêm Sinh Viên</button>
+          
+        </form>
+        <table id="studentTable">
+           
+        </table>
+    </div>
+
+    <script>
+        var studentArray = [];
+
+        document.getElementById('addStudentForm').onsubmit = function (event) {
+            event.preventDefault();
+            var newStudent = {
+                name: document.getElementById('name').value,
+                age: document.getElementById('age').value,
+                address: document.getElementById('address').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                class: document.getElementById('class').value
+            };
+            studentArray.push(newStudent);
+            renderTable();
+        };
+
+        function deleteStudent(index) {
+            studentArray.splice(index, 1);
+            renderTable();
+        }
+
+        function renderTable() {
+            var table = document.getElementById('studentTable');
+            table.innerHTML = '<tr><th> STT</th><th> Tên</th><th> Tuổi</th><th> Địa chỉ </th> <th> SDT </th> <th> Email</th><th> Lớp học</th><th> Xóa</th></tr>';
+            studentArray.forEach(function (student, index) {
+                var row = table.insertRow(-1);
+                row.insertCell(0).innerHTML = index + 1;
+                row.insertCell(1).innerHTML = student.name;
+                row.insertCell(2).innerHTML = student.age;
+                row.insertCell(3).innerHTML = student.address;
+                row.insertCell(4).innerHTML = student.phone;
+                row.insertCell(5).innerHTML = student.email;
+                row.insertCell(6).innerHTML = student.class;
+                var deleteCell = row.insertCell(7);
+                deleteCell.innerHTML = '<button onclick="deleteStudent(' + index + ')">Xóa</button>';
+            });
+        }
+
+
+        renderTable();
+    </script>
+</body>
+
+</html>

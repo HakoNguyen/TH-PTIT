@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Đăng Nhập</title>
+<link rel="stylesheet" href="./css/login.css">    
+</head>
+<body>
+<div class="login-container">
+  <h2>Đăng Nhập</h2>
+  <input type="text" id="username" placeholder="Tên đăng nhập">
+  <input type="password" id="password" placeholder="Mật khẩu">
+  <button onclick="login()">Đăng nhập</button>
+</div>
+
+<script>
+function login() {
+  var username = document.getElementById('username').value;
+  var password = document.getElementById('password').value;
+  var fixedPassword = '4444'; // Mật khẩu cố định
+  if(password === fixedPassword) {
+    // Chuyển hướng đến trang quản lý sinh viên
+    window.location.href = 'http://127.0.0.1:5500/TH-02/index2.html';
+  } else {
+    alert('Mật khẩu không chính xác!');
+  }
+}
+</script>
+</body>
+</html>

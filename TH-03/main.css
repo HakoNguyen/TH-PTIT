@@ -1,0 +1,57 @@
+#weather-app {
+    background-color: #2980b9; /* Màu xanh dương */
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header h1 {
+    font-size: 24px;
+    margin: 0;
+    color: #ffffff;
+  }
+  
+  .current-weather {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  #weather-icon {
+    width: 100px;
+    height: 100px;
+  }
+  #temperature-icon {
+    width: 100px;
+    height: 100px;
+  }
+  #wind-icon {
+    width: 100px;
+    height: 100px;
+  }
+  
+  #weather-condition {
+    font-size: 20px;
+    margin-left: 20px;
+    color: #ffffff;
+  }
+  
+  #temperature {
+    font-size: 30px;
+    margin-left: 20px;
+    color: #ffffff;
+  }
+  #wind {
+    font-size: 20px;
+    margin-left: 20px;
+    color: #ffffff;
+  }
+  
